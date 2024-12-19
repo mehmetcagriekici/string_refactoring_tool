@@ -11,9 +11,10 @@ export function orgStyles(memo: typeSaveStyle, store: typeStoreStyles) {
   const mostCommonStyle: string[] = [];
 
   //to mutate, and final result
-  const restStyles = { ...store };
+  const restStyles: typeStoreStyles = {};
   //loop over the store
   for (const [stylesKey, current] of Object.entries(store)) {
+    restStyles[stylesKey] = {};
     //loop over the current store
     //key and value are identical
     for (const [key, value] of Object.entries(current)) {
